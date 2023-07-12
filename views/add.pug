@@ -1,0 +1,18 @@
+extends layout 
+
+block content 
+    h1 #{title}
+    form(method= 'post', action='/medicine/add')
+        #form-group 
+            label Name 
+            input.form-control(name='name',type='text')
+        #form-group 
+            label description 
+            textarea.form-control(name='description')
+        #form-group 
+            label expdate
+            input.form-control(name='expdate', type='text')
+        #form-group 
+            label price 
+            input.form-control(name='price', type='text')
+        input.btn.btn-primary(type='submit',value='submit')

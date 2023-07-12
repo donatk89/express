@@ -1,0 +1,22 @@
+
+extends layout
+
+block content
+  h1 Search Results
+  if medicines && medicines.length > 0
+    each medicine in medicines
+      .card
+        .card-body
+          h5.card-title= medicine.name
+          p.card-text Description: #{medicine.description}
+          p.card-text Expire date: 
+          if (new Date(medicine.expdate) < new Date())
+              span(style="color: red")= medicine.expdate
+          else
+              span(style="color: green")= medicine.expdate
+          p.card-text Price: #{medicine.price}
+
+  else
+    p No search results found.
+
+

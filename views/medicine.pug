@@ -1,0 +1,14 @@
+extend layout
+
+block content
+    h1= medicine.name
+    h5 medicine description #{medicine.description}
+    h5 Expire date:  
+    if (new Date(medicine.expdate) < new Date())
+        span(style="color: red")= medicine.expdate
+    else
+        span(style="color: green")= medicine.expdate
+    h5 Price: #{medicine.price}
+    hr
+    a.btn.btn-default(href='/medicine/edit/'+medicine._id) Edit
+    a.btn.btn-default(href='/medicine/delete/'+medicine._id) Delete

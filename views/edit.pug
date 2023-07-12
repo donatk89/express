@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    h1= title
+    form(method='POST', action='/medicine/edit/'+medicine._id)
+        #form-group
+            label name
+            input.form-control(name='name', type='text', value=medicine.name)
+        #form-group
+            label description
+            textarea.form-control(name='description')= medicine.description
+        #form-group
+            label expdate
+            input.form-control(name='expdate', type='Date', value=medicine.expdate)
+        #form-group
+            label price
+            input.form-control(name='price', type='Number', value=medicine.price)
+
+        input.btn.btn-primary(type='submit', value='Submit')
